@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium .webdriver.support.select import Select
 from selenium.webdriver.common.by import By
-from pages.home import HomePage
+import pages.home
 
 class Login():
     def __init__(self, driver):
@@ -18,4 +18,4 @@ class Login():
         self.password_field.send_keys(password)
         self.login_button.click()
         self.driver.switch_to.default_content()
-        return HomePage(self.driver)
+        return pages.home.HomePage(self.driver)
